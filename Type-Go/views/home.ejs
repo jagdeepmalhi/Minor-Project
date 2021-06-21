@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.js"
+    integrity="sha512-2RDFHqfLZW8IhPRvQYmK9bTLfj/hddxGXQAred2wNZGkrKQkLGj8RCkXfRJPHlDerdHHIzTFaahq4s/P4V6Qig=="
+    crossorigin="anonymous"></script>
+
+  <script defer src="../js/home.js"></script>
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <!-- <link rel="stylesheet" type="text/css" href="../css/home.css"> -->
+  <link rel="stylesheet" type="text/css" href="../css/template.css">
+  <link rel="stylesheet" media="screen and (max-width: 1000px)" href="css/temp.css">
+
+
+  <title>Type Go</title>
+</head>
+
+<body>
+  <%- include('./template/nav.ejs'); -%>
+    <main style = "min-height: 84vh;">
+      <div id="accordion" class="container my-3">
+
+        <div id="JoinAlert" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+          <strong id="message"></strong> Please join a valid Room or play singleplayer Game.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div id="AdminAlert" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+          <strong id="adminLeftGame"></strong> Please create another Room.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div id="roomCreateError" class="alert alert-danger alert-dismissible fade show d-none" role="alert">
+          <strong id="roomExitAlready"></strong> Choose another Room Name.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                aria-controls="collapseOne">
+                Join Game
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <form action="/joingame" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nick Name</label>
+                  <input type="text" class="form-control" id="nickNameOfJoinUser" aria-describedby="emailHelp"
+                    placeholder="Enter Nick Name" name="nickName" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Room Name</label>
+                  <input type="text" class="form-control" id="roomNameOfJoinUser"
+                    placeholder="Enter Room Name Created by your friend" name="code" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Join</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Create Game
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+
+              <form action="/creategame" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nick Name</label>
+                  <input type="text" class="form-control" id="nickName" aria-describedby="emailHelp"
+                    placeholder="Enter Nick Name" name="nickName" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Room Name</label>
+                  <input type="text" class="form-control" id="roomName" aria-describedby="emailHelp"
+                    placeholder="Enter any Room name" name="roomName" required>
+                </div>
+                <button type="submit" id="createBtn" class="btn btn-primary">Create</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include('./template/footer.ejs'); -%>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

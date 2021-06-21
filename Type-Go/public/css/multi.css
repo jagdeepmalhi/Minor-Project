@@ -1,0 +1,172 @@
+*{
+    /* border:1px solid black 1px!important; */
+    box-sizing: border-box;
+    margin: 0px;
+    /* padding: 3px;     */
+}
+
+.topMargin{
+    margin-top: 10px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    min-height: 87vh;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.gameDiv{
+    height: auto;
+    margin: 10px;
+    width: 50%;
+    padding: 1%;
+}
+
+.typeDiv{
+    width: 50%;
+    padding: 1%;
+    margin: 10px;
+    
+}
+
+.game{
+    border-top: 1px solid black;
+    height: inherit
+   
+}
+
+
+.words {
+    padding: 38px;
+    margin-top: 21px;
+    font-size: larger;
+    user-select : none;
+}
+
+.center{
+    text-align: center;
+}
+
+button {
+    font-weight: 600;
+    font-size: large;
+    width: 108px;
+    height: 35px;
+    border-radius: 6px;
+    border: none;
+    background-color: #484848;
+    color: wheat;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button:hover{
+    background-color: #2b2b2b;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: #cccccc;
+    color: #989898;
+    cursor: not-allowed;
+} 
+
+.btnDiv {
+    margin-top: 30px;
+}
+
+
+.shadow{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    border-radius: 20px;
+    background-color: whitesmoke;
+
+}
+
+
+#timer{
+    margin-top: 30px;
+}
+
+.correct{
+    color:#00bb00;
+}
+
+.incorrect{
+    color: red;
+    text-decoration: underline;
+}
+
+#myText{
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 1.3em;
+    resize: none; 
+    height: 180px;
+
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+/* ranking div */
+.rankDiv{
+    width: 70%;
+    margin: 30px auto;
+} 
+
+
+
+/* table css */
+#players {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #players td, #players th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #players tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #players tr:hover {background-color: #ddd;}
+  
+  #players th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #484848;
+    color: wheat;
+  }
+
+/* progress bars */
+
+  .myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+  .myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    transition: width 150ms;
+  }
+
