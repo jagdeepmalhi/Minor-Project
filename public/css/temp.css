@@ -1,0 +1,16 @@
+nav {
+    background-color: #484848;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menuItem {
+    display: inline-block;
+    padding: 8px 17px;
+    text-decoration: none;
+    color: wheat;
+    font-weight: 1000;
+}
